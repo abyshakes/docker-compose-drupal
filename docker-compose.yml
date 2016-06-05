@@ -16,11 +16,10 @@ web:
     - "8000:80"
   volumes:
     # Drupal should live in the "drupal" directory
-    - ./drupal:/app
+    - ..:/var/www/html
   links:
     - database:database
-  command: php -S 0.0.0.0:80 -t /app
-  working_dir: /app
+  working_dir: /var/www/html
   restart: always
 
 # MySQL Server
